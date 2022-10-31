@@ -1,1 +1,1 @@
-web: gunicorn testprojectandrey.wsgi
+web: gunicorn storagesexample.wsgi
