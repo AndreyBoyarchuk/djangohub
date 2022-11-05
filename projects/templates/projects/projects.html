@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+<h1> Projects</h1>
+<h2> My name is: {{name}} </h2>
+ projects are here
+{% if age > 39 %}
+    <h3>Andrey is older than 39</h3>
+{% elif age <= 39 %}
+    <h3>Still Young</h3>
+{% else %}
+    <h1>Exact Age</h1>
+{% endif %}
+
+<table style="background-color: aqua">
+    <thead>
+   <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for project in projects %}
+            <tr>
+                <th>{{project.id}}</th>
+                 <th>{{project.title}} {% if project.topRated %}<strong>Top Rated</strong> {% endif %}</th>
+                 <th>{{project.description}}</th>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
+
+
+</body>
+</html>
